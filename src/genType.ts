@@ -1,5 +1,3 @@
-import { promises as fs } from "fs";
-
 type Node = {
   [key: string]: Node;
 };
@@ -21,12 +19,12 @@ const buildTree = (variables: string[]): Node => {
   return root;
 };
 
-const generateTypeDefinition = (node: Node, indent = ""): string => {
+const tree2TypeDefinition = (node: Node, indent = ""): string => {
   let output = "{\n";
 
   for (const key in node) {
     const value = node[key];
-    const inner = generateTypeDefinition(value, indent + "  ");
+    const inner = tree2TypeDefinition(value, indent + "  ");
     output += `${indent}  ${key}: ${
       Object.keys(value).length > 0 ? inner : "string"
     };\n`;
@@ -37,7 +35,7 @@ const generateTypeDefinition = (node: Node, indent = ""): string => {
   return output;
 };
 
-export const generateTypeDefinitionFile = ({
+export const generateTypeDefinition = ({
   interfaceName,
   variables,
 }: {
@@ -45,7 +43,7 @@ export const generateTypeDefinitionFile = ({
   variables: string[];
 }): string => {
   const tree = buildTree(variables);
-  const typeDefinition = `interface ${interfaceName} ${generateTypeDefinition(
+  const typeDefinition = `interface ${interfaceName} ${tree2TypeDefinition(
     tree
   )}\n`;
 
