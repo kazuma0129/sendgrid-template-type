@@ -1,8 +1,11 @@
 {
-  "name": "sendgrid-template-type",
+  "name": "sendgrid-type-gen",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "bin": {
+    "sendgrid-type-gen": "bin/cli"
+  },
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
