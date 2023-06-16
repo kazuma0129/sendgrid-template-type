@@ -1,0 +1,7 @@
+/example
+/tests
+/node_modules
+/src
+tsconfig.json
+
+*.env
