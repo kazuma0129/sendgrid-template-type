@@ -1,7 +1,7 @@
 {
   "name": "sendgrid-type-gen",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Generate TypeScript interface automatically from sendgrid template by using @sendgrid/client",
   "main": "dist/index.js",
   "bin": {
     "sendgrid-type-gen": "bin/cli"
@@ -12,8 +12,17 @@
     "dev": "ts-node src/index.ts",
     "dev:watch": "ts-node-dev --respawn src/index.ts"
   },
-  "keywords": [],
-  "author": "Kazuma Ohashi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazuma0129/sendgrid-template-type"
+  },
+  "bugs": {
+    "url": "https://github.com/kazuma0129/sendgrid-template-type",
+    "email": "kazuma0129.work@gmail.com"
+  },
+  "homepage": "https://github.com/kazuma0129/sendgrid-template-type#readme",
+  "keywords": ["cli", "sendgrid", "mail"],
+  "author": "Kazuma Ohashi <kazuma0129.work@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.13",
