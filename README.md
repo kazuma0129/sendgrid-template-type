@@ -11,7 +11,7 @@ npm i -g sendgrid-type-gen
 ```sh
 sendgrid-gen-type 
    --api-key {API_KEY}
-   [--template-id {templateId}]
-     [--fname {fileName}]
-     [--iname {interfaceName}]
+   [ --template-id={templateId} ]
+     [ --fname={fileName} ]
+     [ --iname={interfaceName} ]
 ```
